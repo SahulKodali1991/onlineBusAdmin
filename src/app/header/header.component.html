@@ -1,0 +1,34 @@
+<mat-toolbar>
+  <span>Transport</span>
+  <span class="example-spacer"></span>
+
+  <div class="login" *ngIf="!loginSelected">
+      <button mat-stroked-button color="primary" (click)="displayProfile()">
+          <mat-icon>login</mat-icon>
+              <span>Login</span>
+      </button>
+  </div>
+
+
+
+  <div class="profileInfo" *ngIf="loginSelected">
+      <button mat-icon-button class="example-icon" [matMenuTriggerFor]="menu" aria-label="Example icon-button with menu icon">
+          <mat-icon>account_circle</mat-icon>
+      </button>
+      <mat-menu #menu="matMenu">
+          <button mat-menu-item>
+            <mat-icon>notifications</mat-icon>
+            <span>Check notifications</span>
+          </button>
+          <button mat-menu-item (click)="logout()">
+              <mat-icon>logout</mat-icon>
+              <span>Logout</span>
+          </button>
+        </mat-menu>
+  </div>
+</mat-toolbar>
+
+
+<div class="loginCard">
+  <app-login [displayLogin]="loginSelected"></app-login>
+</div>

@@ -1,0 +1,14 @@
+<mat-card *ngIf="displayLogin">
+  <mat-card-actions>
+    <mat-form-field class="example-full-width" appearance="fill">
+      <div class="userName">
+        <mat-label>UserName(Email)</mat-label>
+        <input matInput value="Sahul" (input)="userName($event)">
+      </div>
+    </mat-form-field>
+
+    <br>
+    <button mat-button>LIKE</button>
+    <button mat-button>SHARE</button>
+  </mat-card-actions>
+</mat-card>
