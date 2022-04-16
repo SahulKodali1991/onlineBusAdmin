@@ -1,4 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { Logindetails } from '../logindetails';
 
 @Component({
   selector: 'app-login',
@@ -9,14 +10,16 @@ export class LoginComponent implements OnInit {
 
   @Input() public displayLogin: boolean;
   userId = '';
+  password = '';
+  hide = true;
+  loginData = new Logindetails('', '');
   constructor() { }
 
   ngOnInit(): void {
   }
 
-  userName(event: Event) {
-    this.userId = (event.target as HTMLInputElement).value;
-    console.log('userId::', this.userId);
+  captureLoginData() {
+    console.log('data:: ', this.loginData.userId, this.loginData.password);
   }
 
 }
