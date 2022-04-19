@@ -1,23 +1,26 @@
-<mat-card class="loginCard" *ngIf="displayLogin">
- <mat-card-actions>
-      <form #loginForm = "ngForm">
-          <mat-form-field class="userId" appearance="fill">
-              <mat-label>Enter your userId</mat-label>
-              <input matInput name="userId" [(ngModel)] = "loginData.userId">
-            </mat-form-field>
-            <mat-form-field class="password" appearance="fill">
-              <mat-label>Enter your password</mat-label>
-              <input matInput [type]="hide ? 'password' : 'text'" name="password" [(ngModel)] = "loginData.password">
-              <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
-                <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
-              </button>
-            </mat-form-field>
-            <br>
-            <div class="button">
-              <button mat-raised-button (click) = "captureLoginData()">Submit</button>
-              <button mat-button>SignUp</button>
-              <button mat-button>Forgot Password</button>
-            </div>
-      </form>
-  </mat-card-actions>
-</mat-card>
+<form [formGroup]="form">
+  <mat-card class="loginCard" *ngIf="displayLogin">
+
+    <mat-card-actions>
+      <mat-form-field class="userId" appearance="fill">
+        <mat-label>Enter your userId</mat-label>
+        <input matInput name="userId" formControlName="userId">
+      </mat-form-field>
+      <mat-form-field class="password" appearance="fill">
+        <mat-label>Enter your password</mat-label>
+        <input matInput [type]="hide ? 'password' : 'text'" name="password" formControlName="password">
+        <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'"
+          [attr.aria-pressed]="hide">
+          <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+        </button>
+      </mat-form-field>
+      <br>
+      <div class="button">
+        <button mat-raised-button (click)="captureLoginData()">Submit</button>
+        <button mat-button>SignUp</button>
+        <button mat-button>Forgot Password</button>
+      </div>
+
+    </mat-card-actions>
+  </mat-card>
+</form>

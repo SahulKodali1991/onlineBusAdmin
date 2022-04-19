@@ -35,7 +35,8 @@ import { LoginComponent } from './login/login.component';
     MatMenuModule,
     MatCardModule,
     MatFormFieldModule,
-    MatInputModule
+    MatInputModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
